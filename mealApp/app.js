@@ -25,59 +25,59 @@ async function fetchMeal(search) {
   displayMeals();
 }
 
-// function displayMeals() {
-// container.innerHTML = meals.map(
-//   meal => {
-//     let ingredients = [];
-//     for (let i = 1; i < 21; i++) {
-//       if (meal[`strIngredient${i}`]) {
-//         let ingredient = meal[`strIngredient${i}`];
-//         let measure = meal[`strMeasure${i}`];
-//         ingredients.push(`<li>${ingredient} - ${measure}</li> `);
-//       }
-//     }
-//     return`
-//     <div class="meal">
-//       <h3 class="meal__title">${meal.strMeal}</h3>
-//       <img class="meal__image" src="${meal.strMealThumb}"/>
-//       <span class="meal__area">${meal.strArea}</span>
-//       <ul class="meal__ingredients">${ingredients.join("")}</ul>
-//     </div>
-//     `
-//   }
-// ).join("");
-// }
-
 function displayMeals() {
-  container.innerHTML = ''; 
-  if (!meals) {
-    container.innerHTML = '<p>No meals found.</p>';
-    return;
-  }
-
-  meals.forEach((meal) => {
-    const mealDiv = document.createElement("div");
-    mealDiv.className = "meal";
-
+container.innerHTML = meals.map(
+  meal => {
     let ingredients = [];
     for (let i = 1; i < 21; i++) {
       if (meal[`strIngredient${i}`]) {
         let ingredient = meal[`strIngredient${i}`];
         let measure = meal[`strMeasure${i}`];
-
         ingredients.push(`<li>${ingredient} - ${measure}</li> `);
       }
     }
-
-    mealDiv.innerHTML = `
-      <div class="meal__header">
-        <h2 class="meal__title">${meal.strMeal}</h2>
-        <img class="meal__image" src="${meal.strMealThumb}"/>
-        <h4 class="meal__area">${meal.strArea}</h4>
-      </div>
+    return`
+    <div class="meal">
+      <h3 class="meal__title">${meal.strMeal}</h3>
+      <img class="meal__image" src="${meal.strMealThumb}"/>
+      <span class="meal__area">${meal.strArea}</span>
       <ul class="meal__ingredients">${ingredients.join("")}</ul>
-    `;
-
-    container.appendChild(mealDiv);
-  });
+    </div>
+    `
+  }
+).join("");
 }
+
+// function displayMeals() {
+//   container.innerHTML = ''; 
+//   if (!meals) {
+//     container.innerHTML = '<p>No meals found.</p>';
+//     return;
+//   }
+
+//   meals.forEach((meal) => {
+//     const mealDiv = document.createElement("div");
+//     mealDiv.className = "meal";
+
+//     let ingredients = [];
+//     for (let i = 1; i < 21; i++) {
+//       if (meal[`strIngredient${i}`]) {
+//         let ingredient = meal[`strIngredient${i}`];
+//         let measure = meal[`strMeasure${i}`];
+
+//         ingredients.push(`<li>${ingredient} - ${measure}</li> `);
+//       }
+//     }
+
+//     mealDiv.innerHTML = `
+//       <div class="meal__header">
+//         <h2 class="meal__title">${meal.strMeal}</h2>
+//         <img class="meal__image" src="${meal.strMealThumb}"/>
+//         <h4 class="meal__area">${meal.strArea}</h4>
+//       </div>
+//       <ul class="meal__ingredients">${ingredients.join("")}</ul>
+//     `;
+
+//     container.appendChild(mealDiv);
+//   });
+// }
