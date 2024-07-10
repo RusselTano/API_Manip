@@ -26,6 +26,12 @@ async function fetchMeal(search) {
 }
 
 function displayMeals() {
+    container.innerHTML = ''; 
+  if (!meals) {
+    container.innerHTML = '<p>No meals found.</p>';
+    return;
+  }
+
 container.innerHTML = meals.map(
   meal => {
     let ingredients = [];
