@@ -87,3 +87,5 @@ container.innerHTML = meals.map(
 //     container.appendChild(mealDiv);
 //   });
 // }
+
+console.log(menubar);
