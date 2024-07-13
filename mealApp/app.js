@@ -88,4 +88,4 @@ container.innerHTML = meals.map(
 //   });
 // }
 
-console.log(menubar);
+// console.log(menubar);
