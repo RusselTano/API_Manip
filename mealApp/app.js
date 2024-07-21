@@ -88,4 +88,39 @@ container.innerHTML = meals.map(
 //   });
 // }
 
-console.log(menubar);
+// console.log(menubar);
+
+// async function getArticles(url) {
+//   let articles;
+
+//   try {
+//     const response = await fetch(url);
+
+//     if (!response.ok) throw Error(`Error : ${response.status}`);
+
+//     articles = await response.json();
+//   } catch (error) {
+//     const p = document.createElement("p");
+//     p.textContent = error.message;
+//     grid.appendChild(p);
+//   }
+//   if (articles) {
+//     createArticles(articles);
+//   }
+// }
+
+// function createArticles(articles) {
+//   articles.forEach((article) => {
+//     const item = document.createElement("div");
+//     item.className = "item";
+//     item.innerHTML = `
+//     <h2></h2>
+//     <a href="#">Lire l'article</a>
+//     `;
+//     item.querySelector("h2").textContent = article.title;
+//     grid.appendChild(item);
+//     console.log(article.title);
+//   });
+// }
+
+// getArticles("https://jsonplaceholder.typicode.com/posts");
