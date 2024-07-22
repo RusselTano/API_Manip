@@ -123,4 +123,4 @@ container.innerHTML = meals.map(
 //   });
 // }
 
-// getArticles("https://jsonplaceholder.typicode.com/posts");
+getArticles("https://jsonplaceholder.typicode.com/posts");
